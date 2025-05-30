@@ -1,33 +1,38 @@
 function validateAndSubmit(event) {
-      event.preventDefault();
-      const form = document.getElementById('subscriptionForm');
-      const emailInput = document.getElementById('email');
-      const errorMessage = document.querySelector('.error-message');
-      const email = emailInput.value.trim();
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  event.preventDefault();
+  const form = document.getElementById('subscriptionForm');
+  const emailInput = document.getElementById('email');
+  const errorMessage = document.querySelector('.error-message');
+  const email = emailInput.value.trim();
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-      if (!email) {
-        emailInput.classList.add('error');
-        errorMessage.textContent = 'Email is required';
-      } else if (!emailRegex.test(email)) {
-        emailInput.classList.add('error');
-        errorMessage.textContent = 'Valid email required';
-      } else {
-        emailInput.classList.remove('error');
-        // Redirect to confirmation page
-        window.location.href = 'confirmation.html';
-        // emailInput.classList.remove('error');
-        // errorMessage.textContent = '';
-        // form.style.display = 'none'; // Hide form
-        // document.querySelector('.confirmation-card').style.display = 'block'; // Show confirmation
-      }
-    }
+  if (!email) {
+    emailInput.classList.add('error');
+    errorMessage.textContent = 'Email is required';
+  } else if (!emailRegex.test(email)) {
+    emailInput.classList.add('error');
+    errorMessage.textContent = 'Valid email required';
+  } else {
+    emailInput.classList.remove('error');
 
-    // function dismissMessage() {
-    //   document.querySelector('.confirmation-card').style.display = 'none';
-    //   document.getElementById('subscriptionForm').style.display = 'block';
-    //   document.getElementById('email').value = ''; // Clear input
-    // }
+    // Save email to localStorage
+    localStorage.setItem('subscribedEmail', email);
+
+    // Redirect to confirmation page
+    window.location.href = 'confirmation.html';
+  }
+}
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+  const email = localStorage.getItem('subscribedEmail');
+  const emailSpan = document.querySelector('.message span');
+
+  if (email && emailSpan) {
+    emailSpan.textContent = email;
+  }
+});
+
 
     // Real-time validation
     document.getElementById('email').addEventListener('input', function() {
@@ -60,20 +65,6 @@ function validateAndSubmit(event) {
       illustration.style.background = 'none';
       illustration.querySelector('::after').style.display = 'block';
     };
-
-    function validateEmail() {
-      const emailInput = document.getElementById('email');
-      const email = emailInput.value;
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-      if (!emailRegex.test(email)) {
-        emailInput.classList.add('error');
-      } else {
-        emailInput.classList.remove('error');
-        // Redirect to confirmation page
-        window.location.href = 'confirmation.html';
-      }
-    }
 
     function dismissMessage() {
       window.location.href = 'index.html';
