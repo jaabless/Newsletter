@@ -5,17 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Subscription Confirmation</title>
   <link rel="stylesheet" href="css/style.css">
-    <script src="js/scripts.js"></script>
+    <script defer src="js/scripts.js"></script>
 
 </head>
 <body>
-  <div class="confirmation-card">
-    <div class="checkmark"></div>
-    <div class="message">
-       <h1>Thanks for subscribing!</h1>
-       <p>A confirmation email has been sent to <span style="font-weight: bold;">ash@loremcompany.com</span>. Please open it and click the button inside to confirm your subscription.</p>
+  <div class="confirmation-wrapper">
+
+    <div class="confirmation-card">
+      <div class="checkmark"></div>
+      <div class="message">
+        <h1>Thanks for subscribing!</h1>
+        <p>A confirmation email has been sent to <span style="font-weight: bold;"></span>. Please open it and click the button inside to confirm your subscription.</p>
+      </div>
+      <button class="subscribe-btn" onclick="backMessage()">Dismiss message</button>
     </div>
-    <button class="subscribe-btn" onclick="backMessage()">Dismiss message</button>
   </div>
 </body>
 </html>
