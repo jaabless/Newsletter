@@ -13,6 +13,10 @@
   font-style: normal;
 }
 
+/* Base Reset */
+html, body{
+  overflow-x: hidden;
+}
 
 body {
       font-family: 'RobotoRegular', sans-serif;
@@ -22,31 +26,39 @@ body {
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      margin: 0;
       color: #1a2a44;
     }
 
     h1 {
-  font-family: 'RobotoBold', sans-serif;
-  font-size: 56px;
-}
+      font-family: 'RobotoBold', sans-serif;
+      font-size: 56px;
+    }
 
     .container {
-      display: flex;
-      background-color: white;
+    display: grid;
+  grid-template-columns:repeat(auto-fit, minmax(340px, 1fr));
+      background-color: rgb(255, 255, 255);
       border-radius: 20px;
-      overflow: hidden;
+      /* overflow: hidden; */
       width: 800px;
-      max-width: 90%;
+      max-width: 95%;
+      padding: 2rem 0rem;
+      position: relative;
+      
     }
 
+
     .left-section {
-      padding: 40px;
-      width: 50%;
+   /* padding: 4rem 2rem 0 2rem; */
+   /* padding: 0rem 3rem 0 3rem; */
+   padding: 40px;
+   /* background-color: #FF527B; */
     }
+
 
     .left-section h1 {
       margin-bottom: 20px;
+      font-size: 3rem;
     }
 
     .left-section p {
@@ -76,30 +88,29 @@ body {
       border-radius: 50%;
       position: absolute;
       left: 0;
-      /* top: 5px; */
     }
-/* 
-    /* .form-group {
-      margin-top: 20px;
-    } */ */
-     .form-group{
-      position: relative;
-      background: green;
-     }
+ 
+    .checkmark {
+        width: 50px;
+        height: 50px;
+        background: url('../assets/images/icon-list.svg') no-repeat center;
+        background-size: cover;
+        background-position: center;
+        border-radius: 50%;
+        display: flex;
+          justify-content: left;
+        align-items: center;
+        background-color: #1a2a44;
+        align-self: flex-start; /* Aligns this element to the left in a flex column */
+      }
 
-    .form-group label {
+      .form-group label {
       display: flex;
       margin-bottom: 5px;
       color: #1a2a44;
-      font-size: 14px;
-      
+      font-size: 14px;      
     position: relative;
     }
-/* .error-message{
-position: absolute;
-top: 0;
-right: 0;
-} */
 
     .form-group input {
       width: 100%;
@@ -155,41 +166,24 @@ right: 0;
       outline: 2px solid #ff527b;
     }
 
-
-    .right-section {
-      width: 50%;
-      /* background: linear-gradient(45deg, #ff6347, #ff8c69); */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      /* min-height: 400px; */
+    .right-section{
+    background:url('../assets/images/illustration-sign-up-desktop.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:right;
+  width: calc(100% - 45px);
+  /* background-color: #ff6347; */
+  border-radius: 16px;
     }
 
-    .illustration {
-      width: 80%;
-      height: 90%;
-      background: url('../assets/images/illustration-sign-up-desktop.svg') no-repeat center;
-      background-size: cover;
-      border-radius: 16px;
-    }
-
-    /* Fallback if the image fails to load */
-    .illustration::after {
-      content: "Image not found";
-      color: white;
-      font-size: 16px;
+    .mobile-img {
       display: none;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
     }
 
-   
+ 
 
     .confirmation-card {
-      background-color: white;
+      background-color: white !important;
       width: 90%;
       max-width: 400px;
       padding: 30px;
@@ -198,178 +192,72 @@ right: 0;
       /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
     }
 
-    /* .checkmark {
-      width: 60px;
-      height: 60px;
-      background-color: #ff6347;
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 0 auto 20px;
-    } */
-
-    .checkmark {
-        width: 50px;
-        height: 50px;
-        background: url('../assets/images/icon-list.svg') no-repeat center;
-        background-size: cover;
-        background-position: center;
-        border-radius: 50%;
-        display: flex;
-          justify-content: left;
-        align-items: center;
-        background-color: #1a2a44;
-        align-self: flex-start; /* Aligns this element to the left in a flex column */
-      }
-
-    /* .checkmark::before {
-      content: "✔";
-      color: white;
-      font-size: 36px;
-    } */
-
-    .message h1 {
-      font-family: 'RobotoBold', sans-serif;
-      font-size: 56px;
-       color: #1a2a44;
-        margin-bottom: 16px;
-      }
-
     .message p {
-      color: #1a2a44;
-      font-size: 16px;
       line-height: 1.5;
-      margin-bottom: 20px;
-    }
-
-    .dismiss-btn {
-      width: 100%;
-      padding: 10px;
-      background-color: #1a2a44;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-
-    .dismiss-btn:hover {
-      background-color: #2a3b5a;
     }
 
 
-     /* Mobile styles */
-    @media (max-width: 768px) {
-
+    @media (max-width:480px) {
       body{
-        background-color: #ffffff;
+       background-color: #fff;
+       margin: 0px;
+       padding: 0px;
       }
-      .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    max-width: 400px;
-    margin: 0 auto;
-    border-radius: 0px;
+      
+  .container{
+    /* background-color: #1a2a44; */
+    width: 1240px;
+    width: 100vw !important;
+    height: 100vh;
+    padding: 0px;
+    margin: 0px;
+    max-width: 100%;
+  }
+  
+  .right-section{
+   background:url('../assets/images/illustration-sign-up-mobile.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:right;
+  /* width: calc(100vw + 50px); */
+  width: 100%;  
+  order: 1;
+  border-radius: 0 0 16px 16px;
+  padding-bottom: 100px;
+    /* height: 450px; */
+    /* height: 100%; */
+    /* display: block; */
+    /* margin: -2rem 0 0 -1rem !important; */
   }
 
-      .right-section {
-        width: 120%;
-        height: 200px; /* Reduced height for mobile */
-        order: -1; /* Moves illustration to the top */
-        /* border-radius:0px 0px 16px 16px; */
-      }
+  .left-section{
+    padding: 1rem !important;
+    order: 2;
+  }
 
-      .illustration {
-        width: 100%;
-        height: 100%;
-        /* Adjusted path - confirm this matches your file structure */
-        background: url('../assets/images/illustration-sign-up-mobile.svg') no-repeat center;
-        background-size: cover; /* Changed to contain to ensure the whole image is visible */
-        /* border: 1px solid white; For debugging, can be removed */
-      }
 
-      .left-section {
-        width: 90%;
-        padding: 20px;
-        padding-top: 0px;
-      }
 
-       .left-section h1 {
-        font-size: 40px;
-      }
+  .confirmation-card {
+    background-color: #fff;
+    margin-top: 70px;
+    max-width: 300px;
+    padding: 20px;
+    border-radius: 0px;
+    text-align: left;
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
+  }
 
-      .left-section p {
-        font-size: 14px;
-      }
-
-      .left-section ul li {
-        font-size: 14px;
-        padding-left: 25px;
-      }
-
-      
-
-      .left-section ul li::before {
-      content: '';
-      width: 18px;
-      height: 18px;
-      background: url('../assets/images/icon-list.svg') no-repeat center;
-      border-radius: 50%;
-      position: absolute;
-      /* left: 0; */
-      /* top: 5px; */
-    }
-      
-
-      .subscribe-btn {
-        font-size: 14px;
-        margin-bottom: 15px;
-      }
-
-      .checkmark {
-        width: 50px;
-        height: 50px;
-        background: url('../assets/images/icon-list.svg') no-repeat center;
-        background-size: cover;
-        background-position: center;
-        border-radius: 50%;
-        display: flex;
-          justify-content: left;
-        align-items: center;
-        background-color: #1a2a44;
-        align-self: flex-start; /* Aligns this element to the left in a flex column */
-      }
-
-       .confirmation-card {
-        margin-top: 70px;
-      max-width: 300px;
-      padding: 20px;
-      border-radius: 0px;
-      text-align: left;
-      box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
+  .message{
+      margin-bottom: 200px;
     }
 
-      .message{
-        margin-bottom: 200px;
-      }
+  .message h1 {
+    font-size: 36px;
+    color: #1d1d3b;
+    margin-bottom: 16px;
+  }
+}
 
-      .message h1 {
-        font-size: 36px;
-        color: #1d1d3b;
-        margin-bottom: 16px;
-      }
-
-
-      .dismiss-btn {
-        font-size: 14px;
-        padding: 8px;
-        margin: auto;
-      }
-      
-    }
 
      
 
