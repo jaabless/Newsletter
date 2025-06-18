@@ -76,3 +76,19 @@ Users should be able to:
 - Push to the branch (git push origin feature-branch).
 - Open a Pull Request with a description of your changes.
 - Please ensure your code follows the project’s style guidelines and includes tests if applicable.
+
+## 🚀 Screenshots
+**Newsletter form**
+![image](https://github.com/user-attachments/assets/99e4bf9a-b86d-4894-b20c-9b695dc5a8b7)
+
+**Form validation**
+![image](https://github.com/user-attachments/assets/147c2c17-0c46-4c08-b748-21bc70b4f8d1)
+
+**Success message**
+![image](https://github.com/user-attachments/assets/da4bc9a8-2037-4cc1-9caf-c76822601492)
+
+**Mobile (iPhone SE)**
+![image](https://github.com/user-attachments/assets/262d2aee-2add-4d74-94c1-328a99f4dfc9)
+
+
+
